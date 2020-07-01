@@ -23,11 +23,6 @@ cl("for in");
 for (const numberKey in numbers) {
   cl([numberKey, numbers[numberKey]]);
 }
-let j = 0;
-while (j < 5) {
-  cl(numbers[j]);
-  j += 1;
-}
 cl("do while");
 let k = 3;
 do {
@@ -47,4 +42,24 @@ function testLogicalOperators() {
     alert(`${randomNumber1} ${randomNumber2}`);
   }
 
+}
+cl ('-----------')
+
+let j = 0;
+while (j < 5) {
+  cl(numbers[j]);
+  j += 1;
+  cl('inside while')
+  break;
+}
+cl('+++++++++++')
+ 
+outerLoop: for (const number of numbers) {
+  innerLoop: for (const numberKey in numbers) {
+    if (numberKey > 3) {
+      break outerLoop;
+    }
+    cl(numberKey);
+    cl(number);
+  }
 }
