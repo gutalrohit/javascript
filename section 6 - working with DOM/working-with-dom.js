@@ -21,3 +21,7 @@ console.log(document.documentElement) //returns entire document
 
 
 
+//exploring and changing DOM properties
+const listElement = document.querySelector('li#item-3');
+listElement.textContent = 'Item 3';
+listElement.style.color = 'blue'; 
